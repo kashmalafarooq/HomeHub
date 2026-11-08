@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HomeHub - Organize your family's everyday life in one place.">
+
+    <title>HomeHub | Family Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">H</div>
+            <div>
+                <h2>HomeHub</h2>
+                <span>Family Management</span>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <p class="nav-heading">MENU</p>
+
+            <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="#groceries" class="nav-link" data-page="groceries">
+                <span>🛒</span> Groceries
+            </a>
+
+            <a href="#expenses" class="nav-link" data-page="expenses">
+                <span>◈</span> Expenses
+            </a>
+
+            <a href="#calendar" class="nav-link" data-page="calendar">
+                <span>▦</span> Family Calendar
+            </a>
+
+            <a href="#tasks" class="nav-link" data-page="tasks">
+                <span>✓</span> Tasks & Chores
+            </a>
+
+            <a href="#reminders" class="nav-link" data-page="reminders">
+                <span>♧</span> Reminders
+            </a>
+        </div>
+
+        <div class="nav-section">
+            <p class="nav-heading">FAMILY & HOME</p>
+
+            <a href="#documents" class="nav-link" data-page="documents">
+                <span>▤</span> Documents
+            </a>
+
+            <a href="#inventory" class="nav-link" data-page="inventory">
+                <span>▣</span> Home Inventory
+            </a>
+
+            <a href="#members" class="nav-link" data-page="members">
+                <span>♙</span> Family Members
+            </a>
+
+            <a href="#contacts" class="nav-link" data-page="contacts">
+                <span>♡</span> Emergency Contacts
+            </a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="help-card">
+                <div class="help-icon">✦</div>
+                <h4>Everything in one place</h4>
+                <p>Make family life simpler and more organized.</p>
+            </div>
+
+            <a href="#settings" class="nav-link" data-page="settings">
+                <span>⚙</span> Settings
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Pages / Dashboard</p>
+                <h3 id="page-heading">Dashboard</h3>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="icon-button" aria-label="Notifications">♧</button>
+
+                <div class="profile">
+                    <div class="avatar">F</div>
+                    <div class="profile-info">
+                        <strong>My Family</strong>
+                        <span>Family Space</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Dashboard -->
+        <section id="dashboard-page" class="page active">
+
+            <div class="welcome-section">
+                <div>
+                    <p class="date-text" id="current-date">Today</p>
+                    <h1>Welcome to your HomeHub <span>✦</span></h1>
+                    <p class="welcome-description">
+                        Your family's life, organized in one place.
+                    </p>
+                </div>
+
+                <button class="primary-button" id="quick-add">
+                    + Quick Add
+                </button>
+            </div>
+
+
+            <!-- Overview Cards -->
+            <div class="overview-grid">
+
+                <div class="overview-card">
+                    <div class="card-top">
+                        <span class="card-icon peach">▤</span>
+                        <span class="card-label">Monthly Expenses</span>
+                    </div>
+                    <h2>Rs. 45,000</h2>
+                    <p>Monthly spending overview</p>
+                    <span class="card-link">View expenses →</span>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-top">
+                        <span class="card-icon green">✓</span>
+                        <span class="card-label">Pending Tasks</span>
+                    </div>
+                    <h2 id="pending-count">3</h2>
+                    <p>Tasks waiting to be completed</p>
+                    <span class="card-link">View tasks →</span>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-top">
+                        <span class="card-icon yellow">🛒</span>
+                        <span class="card-label">Grocery Items</span>
+                    </div>
+                    <h2 id="grocery-count">4</h2>
+                    <p>Items on your shopping list</p>
+                    <span class="card-link">View groceries →</span>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-top">
+                        <span class="card-icon lavender">▦</span>
+                        <span class="card-label">Upcoming Events</span>
+                    </div>
+                    <h2>2</h2>
+                    <p>Events coming up soon</p>
+                    <span class="card-link">View calendar →</span>
+                </div>
+
+            </div>
+
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-grid">
+
+                <!-- Grocery List -->
+                <div class="content-card">
+                    <div class="section-header">
+                        <div>
+                            <h3>Grocery List</h3>
+                            <p>Keep track of household essentials.</p>
+                        </div>
+                        <a href="#groceries" class="text-link" data-page="groceries">View all →</a>
+                    </div>
+
+                    <form id="grocery-form" class="add-form">
+                        <input
+                            type="text"
+                            id="grocery-input"
+                            placeholder="Add a grocery item..."
+                            required
+                        >
+                        <button type="submit">Add</button>
+                    </form>
+
+                    <ul class="grocery-list" id="grocery-list">
+                        <li><label><input type="checkbox"> Milk</label></li>
+                        <li><label><input type="checkbox"> Bread</label></li>
+                        <li><label><input type="checkbox"> Eggs</label></li>
+                        <li><label><input type="checkbox"> Vegetables</label></li>
+                    </ul>
+                </div>
+
+
+                <!-- Tasks -->
+                <div class="content-card">
+                    <div class="section-header">
+                        <div>
+                            <h3>Today's Tasks</h3>
+                            <p>Small tasks, better organized.</p>
+                        </div>
+                        <a href="#tasks" class="text-link" data-page="tasks">View all →</a>
+                    </div>
+
+                    <div class="task-list" id="task-list">
+
+                        <label class="task-item">
+                            <input type="checkbox">
+                            <span>Clean the living room</span>
+                            <small>Today</small>
+                        </label>
+
+                        <label class="task-item">
+                            <input type="checkbox">
+                            <span>Pay electricity bill</span>
+                            <small>Today</small>
+                        </label>
+
+                        <label class="task-item">
+                            <input type="checkbox">
+                            <span>Organize kitchen</span>
+                            <small>Today</small>
+                        </label>
+
+                    </div>
+                </div>
+
+
+                <!-- Events -->
+                <div class="content-card">
+                    <div class="section-header">
+                        <div>
+                            <h3>Upcoming Events</h3>
+                            <p>Never miss an important day.</p>
+                        </div>
+                        <a href="#calendar" class="text-link" data-page="calendar">View calendar →</a>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <strong>12</strong>
+                            <span>NOV</span>
+                        </div>
+                        <div>
+                            <h4>Family Gathering</h4>
+                            <p>Family event</p>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <strong>15</strong>
+                            <span>NOV</span>
+                        </div>
+                        <div>
+                            <h4>Doctor Appointment</h4>
+                            <p>Family appointment</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Family Note -->
+                <div class="content-card family-note">
+                    <div class="note-symbol">✦</div>
+                    <h3>A Little Reminder</h3>
+                    <p>
+                        A happy home is built with love,
+                        care and little moments together.
+                    </p>
+                    <span>Make every day count ♡</span>
+                </div>
+
+            </div>
+
+            <footer class="footer">
+                <p>© 2026 HomeHub. Made for better family living.</p>
+            </footer>
+
+        </section>
+
+
+        <!-- Other page placeholders -->
+        <section id="other-page" class="page">
+            <div class="content-card placeholder-card">
+                <span class="placeholder-icon">✦</span>
+                <h2 id="placeholder-title">Coming Soon</h2>
+                <p>This section is part of our HomeHub development plan.</p>
+                <button class="primary-button" id="back-dashboard">
+                    Back to Dashboard
+                </button>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
